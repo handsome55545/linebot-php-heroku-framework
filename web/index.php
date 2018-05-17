@@ -24,7 +24,9 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-                	$m_message = $message['text'];
+                    if($message['text']=="主系選修"){
+                	    $m_message = "主系選修";
+                        }
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
