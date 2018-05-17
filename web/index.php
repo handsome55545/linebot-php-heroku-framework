@@ -24,13 +24,13 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 　"2"=>"紅心A"
 );*/
 $bbbb=rand(0,4);
-foreach ($client->parseEvents() as $event) { //接收憑證
-    switch ($event['type']) {          //判斷傳回資料型態
-        case 'message':                     //如果有訊息                 //$message['text'] 接收到的資料會儲存在這邊
-            $message = $event['message'];           //將資料存入陣列   //$m_message['text']=將你們要秀出的資料存進的變數
-            switch ($message['type']) {         
-                case 'text':                //如果有文字訊息
-                    $m_message['text']=$message['text'];   
+foreach ($client->parseEvents() as $event) {
+    switch ($event['type']) {
+        case 'message':
+            $message = $event['message'];
+            switch ($message['type']) {
+                case 'text':
+                	$m_message = $message['text'];
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
@@ -44,6 +44,7 @@ foreach ($client->parseEvents() as $event) { //接收憑證
                     	));
                 	}
                     break;
+                
             }
             break;
         default:
