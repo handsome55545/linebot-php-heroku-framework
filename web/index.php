@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2016 LINE Corporation
  *
@@ -14,16 +15,15 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
+
 require_once('./LINEBotTiny.php');
+
+
+
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
+
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
-/*$a=array(
-　"0"=>"葛格",
-　"1"=>"牛蛙妹妹",
-　"2"=>"紅心A"
-);*/
-$bbbb=rand(0,4);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
