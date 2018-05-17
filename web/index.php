@@ -25,8 +25,12 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                     if($message['text']=="主系選修"){
-                        echo "<table border = 1 align='center'>";
-                	    $m_message =echo "<td align='center' colspan=1><font face='DFKai-sb'>".'編號'."</td>";
+                       
+                	    $m_message =
+                        "創新學群
+                        營運學群
+                        行銷學群"  
+                           ;
                         }
                 	if($m_message!="")
                 	{
