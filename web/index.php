@@ -25,7 +25,8 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                     if($message['text']=="主系選修"){
-                	    $m_message = "主系選修";
+                        echo "123";
+                	    $m_message ="test" ;
                         }
                 	if($m_message!="")
                 	{
